@@ -1,0 +1,7 @@
+#この".htaccess"はLive!-NECOとLN-Streamがそれぞれ別のサーバーで動いている場合に必要なものです。
+#別サーバーで動かす場合にこのファイルを置かないとLive!-NECO側のShaka-playerが"CORSエラー"を吐いて
+#動画を再生してくれません
+#同一のサーバー内で動かす場合は削除してしまっても構いません
+#個人でWebサーバーを構築した経験がある方ならお気づきだと思いますが、このファイルは"Apache"用です。
+#Nginxに関しては検証していないので知らん
+Header set Access-Control-Allow-Origin "*"
