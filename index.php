@@ -22,4 +22,13 @@ if($mode=="stream"){
 else if($mode=="kill"){
     shell_exec("sh ./kill.sh ".$id." ".$id);
 }
+
+//サムネイル生成モード
+else if($mode=="thumbnail"){
+    $reruas_addr=api_address.'get/?query='.$id;
+
+    $img = base64_encode(shell_exec("sh ./thumbnail.sh ".$reruas_addr." ".rand(1,30)));
+    $decode_data = base64_decode($img);
+    echo $decode_data;
+}
 ?>
